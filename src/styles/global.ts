@@ -14,5 +14,9 @@ export const globalStyle = globalCss({
     background: 'none',
     border: 'none',
     fontSize: '1rem',
+    display: 'inline-flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 6,
   },
 })

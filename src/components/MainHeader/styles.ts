@@ -6,3 +6,17 @@ export const HeaderContainer = styled('header', {
   justifyContent: 'space-between',
   alignItems: 'center',
 })
+
+export const ButtonLocation = styled('button', {
+  padding: '0.625rem 0.5rem',
+  color: '$purple900',
+  background: '$purple100',
+  gap: 4,
+})
+
+export const ButtonCart = styled('button', {
+  padding: '0.625rem 0.5rem',
+  marginLeft: '0.75rem',
+  color: '$yellow900',
+  background: '$yellow100',
+})

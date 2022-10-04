@@ -1,4 +1,4 @@
-import { HeaderContainer } from './styles'
+import { ButtonCart, ButtonLocation, HeaderContainer } from './styles'
 import Logo from '../../assets/Logo.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 
@@ -9,12 +9,12 @@ export function MainHeader() {
         <img src={Logo} alt="Logo Coffee Delivery - Foguete no copo" />
       </div>
       <div>
-        <button>
+        <ButtonLocation>
           <MapPin weight="fill" /> São Paulo, SP
-        </button>
-        <button>
+        </ButtonLocation>
+        <ButtonCart>
           <ShoppingCart weight="fill" />
-        </button>
+        </ButtonCart>
       </div>
     </HeaderContainer>
   )
