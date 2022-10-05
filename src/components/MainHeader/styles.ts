@@ -1,7 +1,16 @@
 import { styled } from '../../styles'
 
 export const HeaderContainer = styled('header', {
-  padding: '2rem 4rem',
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  width: '100%',
+})
+
+export const HeaderContent = styled('div', {
+  padding: '2rem 0',
+  maxWidth: '70rem',
+  margin: '0 auto',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
