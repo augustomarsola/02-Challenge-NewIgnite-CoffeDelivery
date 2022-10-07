@@ -5,6 +5,7 @@ export const HeaderContainer = styled('header', {
   top: 0,
   left: 0,
   width: '100%',
+  backgroundColor: '$backgroundColor',
 })
 
 export const HeaderContent = styled('div', {
