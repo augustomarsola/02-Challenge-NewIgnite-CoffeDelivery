@@ -19,7 +19,7 @@ export function MainHeader() {
             <MapPin size={20} weight="fill" /> São Paulo, SP
           </ButtonLocation>
           <ButtonCart>
-            <ShoppingCart size={20} weight="fill" />
+            <ShoppingCart size={22} weight="fill" />
           </ButtonCart>
         </div>
       </HeaderContent>

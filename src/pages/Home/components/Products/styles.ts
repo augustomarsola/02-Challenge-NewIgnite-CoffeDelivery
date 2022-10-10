@@ -8,6 +8,7 @@ export const Container = styled('main', {
 
 export const ProductTitle = styled('h2', {
   fontFamily: '$header',
+  fontWeight: '900',
   fontSize: '2rem',
 })
 
@@ -33,6 +34,7 @@ export const ProductContent = styled('li', {
   },
 
   h4: {
+    color: '$subtitleColor',
     marginTop: '1rem',
     fontFamily: '$header',
     fontSize: '1.25rem',
@@ -75,6 +77,7 @@ export const ProductCartControl = styled('div', {
 export const ProductPrice = styled('p', {
   fontFamily: '$header',
   fontSize: '1.5rem',
+  color: '$textColor',
 
   span: {
     fontFamily: '$text',
@@ -111,5 +114,5 @@ export const CartButton = styled('button', {
   cursor: 'pointer',
   backgroundColor: '$purple900',
   color: '$white',
-  padding: '.5rem',
+  padding: '.2rem .5rem',
 })

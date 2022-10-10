@@ -26,7 +26,7 @@ export const {
       buttonColor: '#E6E5E5',
       inputColor: '#EDEDED',
       cardColor: '#F3F2F2',
-      backgroundColor: '#DDDDDD',
+      backgroundColor: '#FAFAFA',
       white: '#FFFFFF',
     },
     fonts: {

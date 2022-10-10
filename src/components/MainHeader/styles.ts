@@ -25,7 +25,7 @@ export const ButtonLocation = styled('button', {
 })
 
 export const ButtonCart = styled('button', {
-  padding: '0.625rem 0.5rem',
+  padding: '0.625rem 0.625rem',
   marginLeft: '0.75rem',
   color: '$yellow900',
   background: '$yellow100',

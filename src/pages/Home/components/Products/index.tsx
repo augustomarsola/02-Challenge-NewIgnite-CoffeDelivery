@@ -45,7 +45,7 @@ export function Products() {
                   </button>
                 </ProductControl>
                 <CartButton>
-                  <ShoppingCart weight="fill" />
+                  <ShoppingCart weight="fill" size={20} />
                 </CartButton>
               </ProductOptionsContent>
             </ProductCartControl>

@@ -5,6 +5,7 @@ export const BackgroundContainer = styled('div', {
   backgroundImage: `url(${BackgroundBlur})`,
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'contain',
+  backgroundPosition: 'center',
 })
 
 export const Container = styled('section', {
