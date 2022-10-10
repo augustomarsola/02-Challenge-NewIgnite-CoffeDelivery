@@ -14,6 +14,7 @@ export const ProductTitle = styled('h2', {
 export const ProductContainer = styled('ul', {
   display: 'grid',
   gap: '2rem',
+  rowGap: '2.5rem',
   gridTemplateColumns: '1fr 1fr 1fr 1fr',
   marginTop: '3.375rem',
 })
@@ -65,9 +66,45 @@ export const CoffeeDescription = styled('p', {
 
 export const ProductCartControl = styled('div', {
   marginTop: '2.25rem',
+  width: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
+})
+
+export const ProductPrice = styled('p', {
+  fontFamily: '$header',
+  fontSize: '1.5rem',
+
+  span: {
+    fontFamily: '$text',
+    fontSize: '0.875rem',
+    marginRight: '.15rem',
+  },
+})
+
+export const ProductOptionsContent = styled('div', {
+  display: 'flex',
+  gap: '0.5rem',
+  alignItems: 'stretch',
+})
+
+export const ProductControl = styled('div', {
+  backgroundColor: '$buttonColor',
+  padding: '0.5rem',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.5rem',
+  borderRadius: 6,
+
+  button: {
+    color: '$purple500',
+    cursor: 'pointer',
+
+    '&:hover': {
+      color: '$purple900',
+    },
+  },
 })
 
 export const CartButton = styled('button', {

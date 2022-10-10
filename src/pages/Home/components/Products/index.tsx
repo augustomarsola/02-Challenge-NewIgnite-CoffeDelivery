@@ -1,4 +1,4 @@
-import { ShoppingCart } from 'phosphor-react'
+import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { coffees } from './coffees'
 import {
   CartButton,
@@ -8,6 +8,9 @@ import {
   ProductCartControl,
   ProductContainer,
   ProductContent,
+  ProductControl,
+  ProductOptionsContent,
+  ProductPrice,
   ProductTitle,
 } from './styles'
 
@@ -27,20 +30,24 @@ export function Products() {
             <h4>{coffee.name}</h4>
             <CoffeeDescription>{coffee.description}</CoffeeDescription>
             <ProductCartControl>
-              <p>
+              <ProductPrice>
                 <span>R$</span>
                 {coffee.price}
-              </p>
-              <div>
-                <div>
-                  <button>-</button>
+              </ProductPrice>
+              <ProductOptionsContent>
+                <ProductControl>
+                  <button>
+                    <Minus />
+                  </button>
                   <span>1</span>
-                  <button>+</button>
-                </div>
+                  <button>
+                    <Plus />
+                  </button>
+                </ProductControl>
                 <CartButton>
                   <ShoppingCart weight="fill" />
                 </CartButton>
-              </div>
+              </ProductOptionsContent>
             </ProductCartControl>
           </ProductContent>
         ))}
