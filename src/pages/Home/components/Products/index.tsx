@@ -1,4 +1,6 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { useState } from 'react'
+import { priceConvert } from '../../../../utils/priceConvert'
 import { coffees } from './coffees'
 import {
   CartButton,
@@ -15,6 +17,16 @@ import {
 } from './styles'
 
 export function Products() {
+  const [coffeeQtd, setCoffeeQtd] = useState(1)
+
+  function increaseCoffee() {
+    setCoffeeQtd((coffee) => ++coffee)
+  }
+
+  function decreaseCoffee() {
+    setCoffeeQtd((coffee) => --coffee)
+  }
+
   return (
     <Container>
       <ProductTitle>Nossos cafés</ProductTitle>
@@ -32,15 +44,15 @@ export function Products() {
             <ProductCartControl>
               <ProductPrice>
                 <span>R$</span>
-                {coffee.price}
+                {priceConvert(coffee.price)}
               </ProductPrice>
               <ProductOptionsContent>
                 <ProductControl>
-                  <button>
+                  <button onClick={decreaseCoffee}>
                     <Minus />
                   </button>
-                  <span>1</span>
-                  <button>
+                  <span>{coffeeQtd}</span>
+                  <button onClick={increaseCoffee}>
                     <Plus />
                   </button>
                 </ProductControl>
