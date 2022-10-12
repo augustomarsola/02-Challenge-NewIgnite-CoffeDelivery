@@ -1,5 +1,5 @@
 import { MainHeader } from './components/MainHeader'
-import { CoffeeContextProvider } from './context/CoffeeContext'
+import { CoffeeContextProvider } from './contexts/CoffeeContext'
 import { Home } from './pages/Home'
 import { globalStyle } from './styles/global'
 
