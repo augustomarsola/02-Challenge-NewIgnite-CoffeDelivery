@@ -1,7 +1,7 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CoffeeContext } from '../../../../context/CoffeeContext'
 import { priceConvert } from '../../../../utils/priceConvert'
-import { coffees } from './coffees'
 import {
   CartButton,
   CoffeeDescription,
@@ -17,6 +17,7 @@ import {
 } from './styles'
 
 export function Products() {
+  const coffees = useContext(CoffeeContext)
   const [coffeeQtd, setCoffeeQtd] = useState(1)
 
   function increaseCoffee() {
