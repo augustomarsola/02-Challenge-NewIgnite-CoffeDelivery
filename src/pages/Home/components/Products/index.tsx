@@ -17,12 +17,20 @@ import {
 } from './styles'
 import { coffeeReducer } from '@/reducers/coffees/reducer'
 import { coffeesActions } from '@/reducers/coffees/actions'
+import { useEffect, useRef, useState } from 'react'
+import { ToastAddedCoffee } from '@/components/Toast/ToastAddedCoffee'
 
 export function Products() {
   const [coffees, dispatchCoffeeQtd] = useReducerAtom(
     coffeesAtom,
     coffeeReducer
   )
+  const [toastAddCoffee, setToastAddCoffee] = useState(false)
+  const timerRef = useRef(0)
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
 
   function increaseCoffee(id: number) {
     dispatchCoffeeQtd(coffeesActions.increase(id))
@@ -30,6 +38,14 @@ export function Products() {
 
   function decreaseCoffee(id: number) {
     dispatchCoffeeQtd(coffeesActions.decrease(id))
+  }
+
+  function addCoffee() {
+    setToastAddCoffee(false)
+    window.clearTimeout(timerRef.current)
+    timerRef.current = window.setTimeout(() => {
+      setToastAddCoffee(true)
+    }, 100)
   }
 
   return (
@@ -61,7 +77,7 @@ export function Products() {
                     <Plus />
                   </button>
                 </ProductControl>
-                <CartButton>
+                <CartButton onClick={addCoffee}>
                   <ShoppingCart weight="fill" size={20} />
                 </CartButton>
               </ProductOptionsContent>
@@ -69,6 +85,7 @@ export function Products() {
           </ProductContent>
         ))}
       </ProductContainer>
+      <ToastAddedCoffee open={toastAddCoffee} setOpen={setToastAddCoffee} />
     </Container>
   )
 }

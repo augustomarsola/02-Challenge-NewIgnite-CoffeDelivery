@@ -33,5 +33,8 @@ export const {
       header: "'Baloo 2', cursive",
       text: "'Roboto', sans-serif",
     },
+    space: {
+      viewportPadding: '25px',
+    },
   },
 })
