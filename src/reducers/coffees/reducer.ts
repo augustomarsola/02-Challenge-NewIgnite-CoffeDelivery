@@ -1,16 +1,37 @@
-import { ActionTypes } from './actions'
+import { InitialCoffeesProps } from '@/atoms/CoffeeAtom'
+import { ActionTypes } from './enums'
 
-export interface Coffee {
-  id: string
-  name: string
-  description: string
-  price: number
-  tags: string[]
-  imgUrl: string
+interface ActionProps {
+  type: string
+  payload: number
 }
 
-export function coffeeReducer(state: any, action: any) {
+export function coffeeReducer(state: InitialCoffeesProps, action: ActionProps) {
   switch (action.type) {
-    case ActionTypes.INCREASE_COFFEE:
+    case ActionTypes.INCREASE_COFFEE: {
+      return state.map((current) => {
+        if (current.id === action.payload) {
+          return {
+            ...current,
+            quantity: ++current.quantity,
+          }
+        }
+        return current
+      })
+    }
+    case ActionTypes.DECREASE_COFFEE: {
+      return state.map((current) => {
+        if (current.id === action.payload && current.quantity > 1) {
+          return {
+            ...current,
+            quantity: --current.quantity,
+          }
+        }
+        return current
+      })
+    }
+    default: {
+      return state
+    }
   }
 }

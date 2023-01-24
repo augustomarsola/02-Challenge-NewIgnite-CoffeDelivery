@@ -1,5 +1,5 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
-import CoffeeBanner from '../../assets/coffeeBanner.png'
+import CoffeeBanner from '@/assets/coffeeBanner.png'
 import { Products } from './components/Products'
 import {
   BackgroundContainer,

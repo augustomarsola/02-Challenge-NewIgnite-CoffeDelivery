@@ -1,7 +1,7 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { useContext, useState } from 'react'
-import { CoffeeContext } from '../../../../contexts/CoffeeContext'
-import { priceConvert } from '../../../../utils/priceConvert'
+import { useReducerAtom } from 'jotai/utils'
+import { coffeesAtom } from '@/atoms/CoffeeAtom'
+import { priceConvert } from '@/utils/priceConvert'
 import {
   CartButton,
   CoffeeDescription,
@@ -15,17 +15,21 @@ import {
   ProductPrice,
   ProductTitle,
 } from './styles'
+import { coffeeReducer } from '@/reducers/coffees/reducer'
+import { coffeesActions } from '@/reducers/coffees/actions'
 
 export function Products() {
-  const coffees = useContext(CoffeeContext)
-  const [coffeeQtd, setCoffeeQtd] = useState(1)
+  const [coffees, dispatchCoffeeQtd] = useReducerAtom(
+    coffeesAtom,
+    coffeeReducer
+  )
 
-  function increaseCoffee() {
-    setCoffeeQtd((coffee) => ++coffee)
+  function increaseCoffee(id: number) {
+    dispatchCoffeeQtd(coffeesActions.increase(id))
   }
 
-  function decreaseCoffee() {
-    setCoffeeQtd((coffee) => --coffee)
+  function decreaseCoffee(id: number) {
+    dispatchCoffeeQtd(coffeesActions.decrease(id))
   }
 
   return (
@@ -49,11 +53,11 @@ export function Products() {
               </ProductPrice>
               <ProductOptionsContent>
                 <ProductControl>
-                  <button onClick={decreaseCoffee}>
+                  <button onClick={() => decreaseCoffee(coffee.id)}>
                     <Minus />
                   </button>
-                  <span>{coffeeQtd}</span>
-                  <button onClick={increaseCoffee}>
+                  <span>{coffee.quantity}</span>
+                  <button onClick={() => increaseCoffee(coffee.id)}>
                     <Plus />
                   </button>
                 </ProductControl>
