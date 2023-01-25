@@ -1,5 +1,11 @@
 import { atomWithStorage } from 'jotai/utils'
 
-const initalCart = {}
+export interface CartAtomProps {
+  id: number
+  quantity: number
+}
 
-export const cartAtom = atomWithStorage('@coffeeDeliveryCart', [{ qtd: 0 }])
+export const cartAtom = atomWithStorage<CartAtomProps[]>(
+  '@coffeeDeliveryCart',
+  []
+)
