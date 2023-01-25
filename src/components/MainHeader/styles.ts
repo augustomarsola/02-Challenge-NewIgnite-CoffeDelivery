@@ -29,4 +29,23 @@ export const ButtonCart = styled('button', {
   marginLeft: '0.75rem',
   color: '$yellow900',
   background: '$yellow100',
+  position: 'relative',
+})
+
+export const QtdCircle = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: '50%',
+  position: 'absolute',
+  top: -5,
+  right: -5,
+  background: '$yellow900',
+  color: '$white',
+  fontSize: '0.75rem',
+  width: '1.25rem',
+  height: '1.25rem',
+  lineHeight: 0,
+  fontFamily: '$text',
+  fontWeight: 'bold',
 })

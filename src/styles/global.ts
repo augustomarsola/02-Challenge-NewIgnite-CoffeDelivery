@@ -18,5 +18,6 @@ export const globalStyle = globalCss({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 6,
+    fontFamily: 'inherit',
   },
 })
