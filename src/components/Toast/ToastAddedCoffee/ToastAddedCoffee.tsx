@@ -1,5 +1,6 @@
 import * as Toast from '@radix-ui/react-toast'
-import { ToastRoot } from '../ToastProvider/ToastProvider.styles'
+import * as Styles from './ToastAddedCoffee.styles'
+import { ShoppingCart } from 'phosphor-react'
 
 interface ToastProps {
   open: boolean
@@ -8,11 +9,16 @@ interface ToastProps {
 
 export default function ToastAddedCoffee({ open, setOpen }: ToastProps) {
   return (
-    <ToastRoot open={open} onOpenChange={setOpen}>
-      <Toast.Title>Pedido adicionado ao carrinho</Toast.Title>
-      <Toast.Action asChild altText="Finalizar Compra">
-        <button>Finalizar Compra</button>
-      </Toast.Action>
-    </ToastRoot>
+    <Styles.ToastRoot open={open} onOpenChange={setOpen}>
+      <Styles.ContentWrapper>
+        <ShoppingCart weight="fill" size={28} />
+        <div>
+          <Styles.ToastTitle>Pedido adicionado ao carrinho</Styles.ToastTitle>
+          <Toast.Action asChild altText="Finalizar Compra">
+            <Styles.ToastButton>Finalizar Compra</Styles.ToastButton>
+          </Toast.Action>
+        </div>
+      </Styles.ContentWrapper>
+    </Styles.ToastRoot>
   )
 }
