@@ -1,4 +1,4 @@
-import { ActionTypes } from './enums'
+import { ActionTypes } from './coffees.enums'
 
 function increaseCoffee(id: number) {
   return {

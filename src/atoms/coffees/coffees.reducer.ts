@@ -1,5 +1,5 @@
-import { InitialCoffeesProps } from '@/atoms/CoffeeAtom'
-import { ActionTypes } from './enums'
+import { InitialCoffeesProps } from './coffee.atom'
+import { ActionTypes } from './coffees.enums'
 
 interface ActionProps {
   type: string

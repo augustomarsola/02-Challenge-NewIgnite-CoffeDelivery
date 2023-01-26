@@ -1,6 +1,5 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
 import { useReducerAtom } from 'jotai/utils'
-import { coffeesAtom } from '@/atoms/CoffeeAtom'
 import { priceConvert } from '@/utils/priceConvert'
 import {
   CartButton,
@@ -15,16 +14,21 @@ import {
   ProductPrice,
   ProductTitle,
 } from './styles'
-import { coffeeReducer } from '@/reducers/coffees/reducer'
-import { coffeesActions } from '@/reducers/coffees/actions'
 import { useEffect, useRef, useState } from 'react'
 import { ToastAddedCoffee } from '@/components/Toast/ToastAddedCoffee'
+import { coffeesAtom } from '@/atoms/coffees/coffee.atom'
+import { coffeeReducer } from '@/atoms/coffees/coffees.reducer'
+import { cartAtom } from '@/atoms/cart/cart.atom'
+import { cartReducer } from '@/atoms/cart/cart.reducer'
+import { coffeesActions } from '@/atoms/coffees/coffees.actions'
+import { cartActions } from '@/atoms/cart/cart.actions'
 
 export function Products() {
   const [coffees, dispatchCoffeeQtd] = useReducerAtom(
     coffeesAtom,
     coffeeReducer
   )
+  const [, dispatchCartAddCoffee] = useReducerAtom(cartAtom, cartReducer)
   const [toastAddCoffee, setToastAddCoffee] = useState(false)
   const timerRef = useRef(0)
 
@@ -40,9 +44,10 @@ export function Products() {
     dispatchCoffeeQtd(coffeesActions.decrease(id))
   }
 
-  function addCoffee() {
+  function addCoffeeHandler(id: number, quantity: number) {
     setToastAddCoffee(false)
     window.clearTimeout(timerRef.current)
+    dispatchCartAddCoffee(cartActions.addCoffee(id, quantity))
     timerRef.current = window.setTimeout(() => {
       setToastAddCoffee(true)
     }, 100)
@@ -77,7 +82,9 @@ export function Products() {
                     <Plus />
                   </button>
                 </ProductControl>
-                <CartButton onClick={addCoffee}>
+                <CartButton
+                  onClick={() => addCoffeeHandler(coffee.id, coffee.quantity)}
+                >
                   <ShoppingCart weight="fill" size={20} />
                 </CartButton>
               </ProductOptionsContent>

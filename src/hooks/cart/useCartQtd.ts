@@ -1,5 +1,5 @@
+import { cartAtom } from '@/atoms/cart/cart.atom'
 import { useAtom } from 'jotai'
-import { cartAtom } from '@/atoms/CartAtom'
 
 export default function useCartQtd() {
   const [cart] = useAtom(cartAtom)
