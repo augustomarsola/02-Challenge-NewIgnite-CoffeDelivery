@@ -1,6 +1,7 @@
 import * as Toast from '@radix-ui/react-toast'
 import { styled } from '@/styles'
 import { ToastRoot as MainRoot } from '../ToastProvider/ToastProvider.styles'
+import { Link } from 'react-router-dom'
 
 export const ToastRoot = styled(MainRoot, {
   background: '$purple500',
@@ -18,7 +19,8 @@ export const ToastTitle = styled(Toast.Title, {
   fontSize: '1.25rem',
 })
 
-export const ToastButton = styled('button', {
+export const ToastButton = styled(Link, {
+  display: 'inline-flex',
   fontFamily: '$header',
   backgroundColor: '$purple500',
   color: '$white',

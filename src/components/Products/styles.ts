@@ -115,4 +115,9 @@ export const CartButton = styled('button', {
   backgroundColor: '$purple900',
   color: '$white',
   padding: '.2rem .5rem',
+  transition: 'background-color .1s',
+
+  '&:hover': {
+    backgroundColor: '$purple500',
+  },
 })

@@ -1,6 +1,7 @@
 import * as Toast from '@radix-ui/react-toast'
 import * as Styles from './ToastAddedCoffee.styles'
 import { ShoppingCart } from 'phosphor-react'
+import { routesNames } from '@/routes/routesNames'
 
 interface ToastProps {
   open: boolean
@@ -15,7 +16,9 @@ export default function ToastAddedCoffee({ open, setOpen }: ToastProps) {
         <div>
           <Styles.ToastTitle>Pedido adicionado ao carrinho</Styles.ToastTitle>
           <Toast.Action asChild altText="Finalizar Compra">
-            <Styles.ToastButton>Finalizar Compra</Styles.ToastButton>
+            <Styles.ToastButton to={routesNames.checkout}>
+              Finalizar Compra
+            </Styles.ToastButton>
           </Toast.Action>
         </div>
       </Styles.ContentWrapper>

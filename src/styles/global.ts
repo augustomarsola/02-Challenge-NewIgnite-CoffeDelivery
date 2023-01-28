@@ -20,4 +20,7 @@ export const globalStyle = globalCss({
     borderRadius: 6,
     fontFamily: 'inherit',
   },
+  a: {
+    textDecoration: 'none',
+  },
 })

@@ -8,6 +8,7 @@ import {
 import Logo from '../../assets/Logo.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { useCartQtd } from '@/hooks/cart'
+import { routesNames } from '@/routes/routesNames'
 
 export function MainHeader() {
   const cartQtd = useCartQtd()
@@ -21,7 +22,7 @@ export function MainHeader() {
           <ButtonLocation>
             <MapPin size={20} weight="fill" /> São Paulo, SP
           </ButtonLocation>
-          <ButtonCart>
+          <ButtonCart to={routesNames.checkout}>
             <ShoppingCart size={20} weight="fill" />
             {!!cartQtd && <QtdCircle>{cartQtd}</QtdCircle>}
           </ButtonCart>

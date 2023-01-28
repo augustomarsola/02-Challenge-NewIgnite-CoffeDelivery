@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { styled } from '../../styles'
 
 export const HeaderContainer = styled('header', {
@@ -24,12 +25,20 @@ export const ButtonLocation = styled('button', {
   gap: 4,
 })
 
-export const ButtonCart = styled('button', {
+export const ButtonCart = styled(Link, {
+  display: 'inline-flex',
   padding: '0.625rem 0.625rem',
   marginLeft: '0.75rem',
   color: '$yellow900',
   background: '$yellow100',
   position: 'relative',
+  transition: 'background-color .1s, color .3s',
+  borderRadius: 6,
+
+  '&:hover': {
+    background: '$yellow500',
+    color: '$white',
+  },
 })
 
 export const QtdCircle = styled('div', {
