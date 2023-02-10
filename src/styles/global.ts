@@ -5,6 +5,7 @@ export const globalStyle = globalCss({
     margin: 0,
     padding: 0,
     boxSizing: 'border-box',
+    lineHeight: '130%',
   },
   body: {
     backgroundColor: '$backgroundColor',

@@ -7,7 +7,15 @@ export default function CompleteOrder() {
     <Styles.Wrapper>
       <SmallTitle>Complete seu pedido</SmallTitle>
       <DefaultCard>
-        <p>Aqui</p>
+        <Styles.DeliveryWrapper>
+          <Styles.DeliveryIcon />
+          <Styles.DeliveryText>
+            <Styles.DeliveryTitle>Endereço de Entrega</Styles.DeliveryTitle>
+            <Styles.DeliveryDescription>
+              Informe o endereço onde deseja receber seu pedido
+            </Styles.DeliveryDescription>
+          </Styles.DeliveryText>
+        </Styles.DeliveryWrapper>
       </DefaultCard>
       <DefaultCard>
         <p>Pagamentos</p>
