@@ -1,7 +1,7 @@
 import { styled } from '@/styles'
 
 export const Wrapper = styled('div', {
-  display: 'grid',
-  gridTemplateColumns: '3fr 2fr',
-  gap: '2rem',
+  paddingTop: '6.75rem',
+  maxWidth: '70rem',
+  margin: '0 auto',
 })

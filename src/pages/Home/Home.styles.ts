@@ -10,9 +10,6 @@ export const BackgroundContainer = styled('div', {
 
 export const Container = styled('section', {
   padding: '5.75rem 0',
-  margin: '0 auto',
-  maxWidth: '70rem',
-  marginTop: '6.75rem',
   display: 'flex',
   gap: '3.5rem',
 })

@@ -9,15 +9,16 @@ import Logo from '../../assets/Logo.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
 import { useCartQtd } from '@/hooks/cart'
 import { routesNames } from '@/routes/routesNames'
+import { Link } from 'react-router-dom'
 
 export function MainHeader() {
   const cartQtd = useCartQtd()
   return (
     <HeaderContainer>
       <HeaderContent>
-        <div>
+        <Link to="/">
           <img src={Logo} alt="Logo Coffee Delivery - Foguete no copo" />
-        </div>
+        </Link>
         <div>
           <ButtonLocation>
             <MapPin size={20} weight="fill" /> São Paulo, SP

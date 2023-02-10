@@ -2,8 +2,6 @@ import { styled } from '../../styles'
 
 export const Container = styled('main', {
   padding: '2rem 0',
-  margin: '0 auto',
-  maxWidth: '70rem',
 })
 
 export const ProductTitle = styled('h2', {
