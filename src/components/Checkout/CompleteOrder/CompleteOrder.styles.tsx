@@ -29,3 +29,31 @@ export const DeliveryIcon = styled(MapPinLine, {
   height: '1.375rem',
   width: '1.375rem',
 })
+
+export const DeliveryFormGrid = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '1rem',
+  marginTop: '2rem',
+})
+
+export const DeliveryFormRow = styled('div', {
+  display: 'flex',
+  gap: '0.75rem',
+})
+
+export const DeliveryFormInput = styled('input', {
+  width: '100%',
+  flexShrink: 0,
+
+  variants: {
+    size: {
+      xs: {
+        width: '10%',
+      },
+      sm: {
+        width: '33%',
+      },
+    },
+  },
+})

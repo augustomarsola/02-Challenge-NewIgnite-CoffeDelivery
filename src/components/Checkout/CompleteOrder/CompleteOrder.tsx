@@ -16,6 +16,23 @@ export default function CompleteOrder() {
             </Styles.DeliveryDescription>
           </Styles.DeliveryText>
         </Styles.DeliveryWrapper>
+        <Styles.DeliveryFormGrid>
+          <Styles.DeliveryFormRow>
+            <Styles.DeliveryFormInput placeholder="CEP" size="sm" />
+          </Styles.DeliveryFormRow>
+          <Styles.DeliveryFormRow>
+            <Styles.DeliveryFormInput placeholder="Rua" />
+          </Styles.DeliveryFormRow>
+          <Styles.DeliveryFormRow>
+            <Styles.DeliveryFormInput placeholder="Número" size="sm" />
+            <Styles.DeliveryFormInput placeholder="Complemento" />
+          </Styles.DeliveryFormRow>
+          <Styles.DeliveryFormRow>
+            <Styles.DeliveryFormInput placeholder="Bairro" size="sm" />
+            <Styles.DeliveryFormInput placeholder="Cidade" />
+            <Styles.DeliveryFormInput placeholder="UF" size="xs" />
+          </Styles.DeliveryFormRow>
+        </Styles.DeliveryFormGrid>
       </DefaultCard>
       <DefaultCard>
         <p>Pagamentos</p>
