@@ -43,16 +43,16 @@ export const DeliveryFormRow = styled('div', {
 })
 
 export const DeliveryFormInput = styled('input', {
-  width: '100%',
+  flexGrow: 1,
   flexShrink: 0,
 
   variants: {
     size: {
       xs: {
-        width: '10%',
+        maxWidth: '10%',
       },
       sm: {
-        width: '33%',
+        maxWidth: '33%',
       },
     },
   },
