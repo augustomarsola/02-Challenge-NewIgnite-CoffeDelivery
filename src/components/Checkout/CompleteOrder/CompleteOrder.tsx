@@ -35,7 +35,15 @@ export default function CompleteOrder() {
         </Styles.DeliveryFormGrid>
       </DefaultCard>
       <DefaultCard>
-        <p>Pagamentos</p>
+        <Styles.DeliveryWrapper>
+          <Styles.CashIcon />
+          <Styles.DeliveryText>
+            <Styles.DeliveryTitle>Pagamentos</Styles.DeliveryTitle>
+            <Styles.DeliveryDescription>
+              O pagamento é feito na entrega. Escolha a forma que deseja pagar
+            </Styles.DeliveryDescription>
+          </Styles.DeliveryText>
+        </Styles.DeliveryWrapper>
       </DefaultCard>
     </Styles.Wrapper>
   )

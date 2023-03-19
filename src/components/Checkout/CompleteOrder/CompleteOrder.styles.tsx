@@ -1,5 +1,5 @@
 import { styled } from '@/styles'
-import { MapPinLine } from 'phosphor-react'
+import { MapPinLine, CurrencyDollar } from 'phosphor-react'
 
 export const Wrapper = styled('div', {
   display: 'flex',
@@ -30,6 +30,12 @@ export const DeliveryIcon = styled(MapPinLine, {
   width: '1.375rem',
 })
 
+export const CashIcon = styled(CurrencyDollar, {
+  color: '$purple900',
+  height: '1.375rem',
+  width: '1.375rem',
+})
+
 export const DeliveryFormGrid = styled('div', {
   display: 'flex',
   flexDirection: 'column',
@@ -44,15 +50,28 @@ export const DeliveryFormRow = styled('div', {
 
 export const DeliveryFormInput = styled('input', {
   width: '100%',
-  flexShrink: 0,
+  fontSize: '0.875rem',
+  fontFamily: '$text',
+  fontWeight: 400,
+  padding: '0.75rem',
+  borderRadius: 4,
+  border: 'solid 1px $buttonColor',
+  backgroundColor: '$inputColor',
+  color: '$textColor',
+
+  '&::placeholder': {
+    color: '$labelColor',
+  },
 
   variants: {
     size: {
       xs: {
-        width: '10%',
+        flexBasis: '10%',
+        minWidth: '10%',
       },
       sm: {
-        width: '33%',
+        flexBasis: '33%',
+        minWidth: '33%',
       },
     },
   },
