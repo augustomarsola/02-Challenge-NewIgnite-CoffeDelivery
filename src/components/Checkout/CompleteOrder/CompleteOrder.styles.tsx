@@ -49,7 +49,8 @@ export const DeliveryFormRow = styled('div', {
 })
 
 export const DeliveryFormInput = styled('input', {
-  width: '100%',
+  flexGrow: 1,
+  flexShrink: 0,
   fontSize: '0.875rem',
   fontFamily: '$text',
   fontWeight: 400,
@@ -66,12 +67,10 @@ export const DeliveryFormInput = styled('input', {
   variants: {
     size: {
       xs: {
-        flexBasis: '10%',
-        minWidth: '10%',
+        maxWidth: '10%',
       },
       sm: {
-        flexBasis: '33%',
-        minWidth: '33%',
+        maxWidth: '33%',
       },
     },
   },
