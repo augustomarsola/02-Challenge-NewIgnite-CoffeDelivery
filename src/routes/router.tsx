@@ -4,6 +4,7 @@ import { ErrorPage } from '@/pages/ErrorPage'
 import { Checkout } from '@/pages/Checkout'
 import { Root } from '@/pages/Root'
 import { routesNames } from './routesNames'
+import { Confirmed } from '@/pages/Confirmed'
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: routesNames.checkout,
         element: <Checkout />,
+      },
+      {
+        path: routesNames.confirmed,
+        element: <Confirmed />,
       },
     ],
   },

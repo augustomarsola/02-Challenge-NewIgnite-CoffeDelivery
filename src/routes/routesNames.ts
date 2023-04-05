@@ -1,3 +1,4 @@
 export const routesNames = {
-  checkout: 'checkout',
+  checkout: '/checkout',
+  confirmed: '/pedido-confirmado',
 }

@@ -64,6 +64,11 @@ export const DeliveryFormInput = styled('input', {
     color: '$labelColor',
   },
 
+  '&:focus': {
+    outline: 'none',
+    border: 'solid 1px $yellow900',
+  },
+
   variants: {
     size: {
       xs: {
