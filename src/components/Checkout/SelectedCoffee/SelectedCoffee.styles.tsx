@@ -14,4 +14,15 @@ export const SelectedCoffeeCard = styled(DefaultCard, {
   flexDirection: 'column',
 })
 
-export const ConfirmOrderButton = styled(Link)
+export const ConfirmOrderButton = styled(Link, {
+  backgroundColor: '$yellow500',
+  borderRadius: 6,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '.75rem',
+  textTransform: 'uppercase',
+  color: '$white',
+  fontWeight: 700,
+  fontSize: '.875rem',
+})
