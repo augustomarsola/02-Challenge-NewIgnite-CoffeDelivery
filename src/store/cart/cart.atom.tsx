@@ -12,28 +12,24 @@ export default function useCart() {
   const [cart, setCart] = useAtom(cartAtom)
 
   const addCoffeeToCart = (product: CartAtomProps) => {
-    setCart((cart) => {
-      const coffeeId = product.id
-      const coffeeQtd = product.quantity
-      const coffeeAddedIndex = cart.findIndex(
-        (coffee) => coffee.id === coffeeId
-      )
+    const coffeeId = product.id
+    const coffeeQtd = product.quantity
+    const coffeeAddedIndex = cart.findIndex((coffee) => coffee.id === coffeeId)
 
-      if (coffeeAddedIndex >= 0) {
-        const newCoffeeArray = cart.slice(0)
-        newCoffeeArray[coffeeAddedIndex].quantity =
-          newCoffeeArray[coffeeAddedIndex].quantity + coffeeQtd
-        return newCoffeeArray
-      }
-
-      return [
+    if (coffeeAddedIndex >= 0) {
+      const newCoffeeArray = cart.slice(0)
+      newCoffeeArray[coffeeAddedIndex].quantity =
+        newCoffeeArray[coffeeAddedIndex].quantity + coffeeQtd
+      setCart(newCoffeeArray)
+    } else {
+      setCart([
         ...cart,
         {
           id: coffeeId,
           quantity: coffeeQtd,
         },
-      ]
-    })
+      ])
+    }
   }
 
   const cartQtd = cart.reduce((prev, current) => {

@@ -14,31 +14,30 @@ export default function useCoffee() {
   const [coffees, setCoffees] = useAtom(coffeesAtom)
 
   function increaseCoffee(id: number) {
-    setCoffees((thisCoffee) =>
-      thisCoffee.map((current) => {
-        if (current.id === id) {
-          return {
-            ...current,
-            quantity: ++current.quantity,
-          }
+    const coffeesIncreased = coffees.map((current) => {
+      if (current.id === id) {
+        return {
+          ...current,
+          quantity: ++current.quantity,
         }
-        return current
-      })
-    )
+      }
+      return current
+    })
+    setCoffees(coffeesIncreased)
   }
 
   function decreaseCoffee(id: number) {
-    setCoffees((thisCoffee) =>
-      thisCoffee.map((current) => {
-        if (current.id === id && current.quantity > 1) {
-          return {
-            ...current,
-            quantity: --current.quantity,
-          }
+    const coffeesDecreased = coffees.map((current) => {
+      if (current.id === id && current.quantity > 1) {
+        return {
+          ...current,
+          quantity: --current.quantity,
         }
-        return current
-      })
-    )
+      }
+      return current
+    })
+
+    setCoffees(coffeesDecreased)
   }
 
   return {
