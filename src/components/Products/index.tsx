@@ -1,5 +1,4 @@
 import { Minus, Plus, ShoppingCart } from 'phosphor-react'
-import { useReducerAtom } from 'jotai/utils'
 import { priceConvert } from '@/utils/priceConvert'
 import {
   CartButton,
@@ -16,19 +15,12 @@ import {
 } from './styles'
 import { useEffect, useRef, useState } from 'react'
 import { ToastAddedCoffee } from '@/components/Toast/ToastAddedCoffee'
-import { coffeesAtom } from '@/atoms/coffees/coffee.atom'
-import { coffeeReducer } from '@/atoms/coffees/coffees.reducer'
-import { cartAtom } from '@/atoms/cart/cart.atom'
-import { cartReducer } from '@/atoms/cart/cart.reducer'
-import { coffeesActions } from '@/atoms/coffees/coffees.actions'
-import { cartActions } from '@/atoms/cart/cart.actions'
+import { useCoffee } from '@/store/coffees'
+import { useCart } from '@/store/cart'
 
 export function Products() {
-  const [coffees, dispatchCoffeeQtd] = useReducerAtom(
-    coffeesAtom,
-    coffeeReducer
-  )
-  const [, dispatchCartAddCoffee] = useReducerAtom(cartAtom, cartReducer)
+  const { coffees, decreaseCoffee, increaseCoffee } = useCoffee()
+  const { addCoffeeToCart } = useCart()
   const [toastAddCoffee, setToastAddCoffee] = useState(false)
   const timerRef = useRef(0)
 
@@ -36,18 +28,10 @@ export function Products() {
     return () => clearTimeout(timerRef.current)
   }, [])
 
-  function increaseCoffee(id: number) {
-    dispatchCoffeeQtd(coffeesActions.increase(id))
-  }
-
-  function decreaseCoffee(id: number) {
-    dispatchCoffeeQtd(coffeesActions.decrease(id))
-  }
-
   function addCoffeeHandler(id: number, quantity: number) {
     setToastAddCoffee(false)
     window.clearTimeout(timerRef.current)
-    dispatchCartAddCoffee(cartActions.addCoffee(id, quantity))
+    addCoffeeToCart({ id, quantity })
     timerRef.current = window.setTimeout(() => {
       setToastAddCoffee(true)
     }, 100)

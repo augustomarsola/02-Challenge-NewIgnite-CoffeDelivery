@@ -7,12 +7,12 @@ import {
 } from './styles'
 import Logo from '../../assets/Logo.svg'
 import { MapPin, ShoppingCart } from 'phosphor-react'
-import { useCartQtd } from '@/hooks/cart'
 import { routesNames } from '@/routes/routesNames'
 import { Link } from 'react-router-dom'
+import { useCart } from '@/store/cart'
 
 export function MainHeader() {
-  const cartQtd = useCartQtd()
+  const { cartQtd } = useCart()
   return (
     <HeaderContainer>
       <HeaderContent>
