@@ -1,4 +1,4 @@
-import { coffees } from './coffees'
+import { coffees } from './coffeesList'
 import { atom, useAtom } from 'jotai'
 
 const initialCoffees = coffees.map((coffee) => ({
@@ -40,9 +40,14 @@ export default function useCoffee() {
     setCoffees(coffeesDecreased)
   }
 
+  function filteredCoffee(id: number) {
+    return coffees.find((coffee) => coffee.id === id)
+  }
+
   return {
     coffees,
     increaseCoffee,
     decreaseCoffee,
+    filteredCoffee,
   }
 }

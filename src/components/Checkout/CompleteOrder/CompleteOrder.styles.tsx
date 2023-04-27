@@ -44,13 +44,23 @@ export const DeliveryFormGrid = styled('div', {
 })
 
 export const DeliveryFormRow = styled('div', {
-  display: 'flex',
+  display: 'grid',
   gap: '0.75rem',
+  gridTemplateColumns: '1fr',
+
+  variants: {
+    size: {
+      xs: {
+        gridTemplateColumns: 'minmax(12rem, 2fr) 4fr 1fr',
+      },
+      sm: {
+        gridTemplateColumns: 'minmax(12rem, 1fr) 3fr',
+      },
+    },
+  },
 })
 
 export const DeliveryFormInput = styled('input', {
-  flexGrow: 1,
-  flexShrink: 0,
   fontSize: '0.875rem',
   fontFamily: '$text',
   fontWeight: 400,
@@ -59,6 +69,7 @@ export const DeliveryFormInput = styled('input', {
   border: 'solid 1px $buttonColor',
   backgroundColor: '$inputColor',
   color: '$textColor',
+  width: '100%',
 
   '&::placeholder': {
     color: '$labelColor',
@@ -67,16 +78,5 @@ export const DeliveryFormInput = styled('input', {
   '&:focus': {
     outline: 'none',
     border: 'solid 1px $yellow900',
-  },
-
-  variants: {
-    size: {
-      xs: {
-        maxWidth: '10%',
-      },
-      sm: {
-        maxWidth: '33%',
-      },
-    },
   },
 })

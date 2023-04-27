@@ -21,20 +21,20 @@ export default function CompleteOrder() {
           </Styles.DeliveryText>
         </Styles.DeliveryWrapper>
         <Styles.DeliveryFormGrid>
-          <Styles.DeliveryFormRow>
-            <Styles.DeliveryFormInput placeholder="CEP" size="sm" />
+          <Styles.DeliveryFormRow size="sm">
+            <Styles.DeliveryFormInput placeholder="CEP" />
           </Styles.DeliveryFormRow>
           <Styles.DeliveryFormRow>
             <Styles.DeliveryFormInput placeholder="Rua" />
           </Styles.DeliveryFormRow>
-          <Styles.DeliveryFormRow>
-            <Styles.DeliveryFormInput placeholder="Número" size="sm" />
+          <Styles.DeliveryFormRow size="sm">
+            <Styles.DeliveryFormInput placeholder="Número" />
             <Styles.DeliveryFormInput placeholder="Complemento" />
           </Styles.DeliveryFormRow>
-          <Styles.DeliveryFormRow>
-            <Styles.DeliveryFormInput placeholder="Bairro" size="sm" />
+          <Styles.DeliveryFormRow size="xs">
+            <Styles.DeliveryFormInput placeholder="Bairro" />
             <Styles.DeliveryFormInput placeholder="Cidade" />
-            <Styles.DeliveryFormInput placeholder="UF" size="xs" />
+            <Styles.DeliveryFormInput placeholder="UF" />
           </Styles.DeliveryFormRow>
         </Styles.DeliveryFormGrid>
       </DefaultCard>

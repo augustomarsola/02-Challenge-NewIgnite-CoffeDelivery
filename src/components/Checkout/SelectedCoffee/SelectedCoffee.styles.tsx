@@ -14,6 +14,29 @@ export const SelectedCoffeeCard = styled(DefaultCard, {
   flexDirection: 'column',
 })
 
+export const ResumeContent = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.75rem',
+})
+
+export const ResumeRow = styled('div', {
+  color: '$textColor',
+  display: 'flex',
+  fontSize: '0.875rem',
+  justifyContent: 'space-between',
+
+  variants: {
+    resumeTotal: {
+      true: {
+        color: '$subtitleColor',
+        fontSize: '1.25rem',
+        fontWeight: 700,
+      },
+    },
+  },
+})
+
 export const ConfirmOrderButton = styled(Link, {
   backgroundColor: '$yellow500',
   borderRadius: 6,
@@ -25,4 +48,5 @@ export const ConfirmOrderButton = styled(Link, {
   color: '$white',
   fontWeight: 700,
   fontSize: '.875rem',
+  marginTop: '1.5rem',
 })
