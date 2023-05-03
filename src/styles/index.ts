@@ -18,6 +18,7 @@ export const {
       purple100: '#EBE5F9',
       purple500: '#8047F8',
       purple900: '#4B2995',
+      red500: '#C60202',
       titleColor: '#272221',
       subtitleColor: '#403937',
       textColor: '#574F4D',

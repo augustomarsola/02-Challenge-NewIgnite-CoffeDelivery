@@ -1,6 +1,5 @@
 import { DefaultCard } from '@/components/DefaultCard'
 import { styled } from '@/styles'
-import { Link } from 'react-router-dom'
 
 export const Wrapper = styled('div', {
   display: 'flex',
@@ -37,9 +36,10 @@ export const ResumeRow = styled('div', {
   },
 })
 
-export const ConfirmOrderButton = styled(Link, {
+export const ConfirmOrderButton = styled('button', {
   backgroundColor: '$yellow500',
   borderRadius: 6,
+  cursor: 'pointer',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -49,4 +49,9 @@ export const ConfirmOrderButton = styled(Link, {
   fontWeight: 700,
   fontSize: '.875rem',
   marginTop: '1.5rem',
+  transition: '.3s',
+
+  '&:hover': {
+    backgroundColor: '$yellow900',
+  },
 })

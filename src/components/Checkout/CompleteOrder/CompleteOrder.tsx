@@ -1,11 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { SmallTitle } from '@/components/SmallTitle'
 import * as Styles from './CompleteOrder.styles'
 import { DefaultCard } from '@/components/DefaultCard'
 import { Bank, CreditCard, Money } from 'phosphor-react'
+import { useCoffeeForm } from '@/store/form'
 
 export default function CompleteOrder() {
-  const [paymentMethod, setPaymentMethod] = useState('')
+  const { inputs: coffeeFormInputs } = useCoffeeForm()
+  const { cepValue, setCepValue } = coffeeFormInputs.cep
+  const { addressValue, setAddressValue } = coffeeFormInputs.address
+  const { cityValue, setCityValue } = coffeeFormInputs.city
+  const { complementValue, setComplementValue } = coffeeFormInputs.complement
+  const { districtValue, setDistrictValue } = coffeeFormInputs.district
+  const { numberValue, setNumberValue } = coffeeFormInputs.number
+  const { ufValue, setUfValue } = coffeeFormInputs.uf
+  const { paymentMethodValue, setPaymentMethodValue } =
+    coffeeFormInputs.paymentMethod
+  const cepInput = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    cepInput.current?.focus()
+  }, [])
 
   return (
     <Styles.Wrapper>
@@ -22,19 +37,48 @@ export default function CompleteOrder() {
         </Styles.DeliveryWrapper>
         <Styles.DeliveryFormGrid>
           <Styles.DeliveryFormRow size="sm">
-            <Styles.DeliveryFormInput placeholder="CEP" />
+            <Styles.DeliveryFormInput
+              placeholder="CEP"
+              ref={cepInput}
+              value={cepValue}
+              onChange={setCepValue}
+            />
           </Styles.DeliveryFormRow>
           <Styles.DeliveryFormRow>
-            <Styles.DeliveryFormInput placeholder="Rua" />
+            <Styles.DeliveryFormInput
+              placeholder="Rua"
+              value={addressValue}
+              onChange={setAddressValue}
+            />
           </Styles.DeliveryFormRow>
           <Styles.DeliveryFormRow size="sm">
-            <Styles.DeliveryFormInput placeholder="Número" />
-            <Styles.DeliveryFormInput placeholder="Complemento" />
+            <Styles.DeliveryFormInput
+              placeholder="Número"
+              value={numberValue}
+              onChange={setNumberValue}
+            />
+            <Styles.DeliveryFormInput
+              placeholder="Complemento"
+              value={complementValue}
+              onChange={setComplementValue}
+            />
           </Styles.DeliveryFormRow>
           <Styles.DeliveryFormRow size="xs">
-            <Styles.DeliveryFormInput placeholder="Bairro" />
-            <Styles.DeliveryFormInput placeholder="Cidade" />
-            <Styles.DeliveryFormInput placeholder="UF" />
+            <Styles.DeliveryFormInput
+              placeholder="Bairro"
+              value={districtValue}
+              onChange={setDistrictValue}
+            />
+            <Styles.DeliveryFormInput
+              placeholder="Cidade"
+              value={cityValue}
+              onChange={setCityValue}
+            />
+            <Styles.DeliveryFormInput
+              placeholder="UF"
+              value={ufValue}
+              onChange={setUfValue}
+            />
           </Styles.DeliveryFormRow>
         </Styles.DeliveryFormGrid>
       </DefaultCard>
@@ -50,9 +94,9 @@ export default function CompleteOrder() {
         </Styles.DeliveryWrapper>
         <Styles.ToggleRoot
           type="single"
-          value={paymentMethod}
+          value={paymentMethodValue}
           onValueChange={(value: string) => {
-            if (value) setPaymentMethod(value)
+            if (value) setPaymentMethodValue(value)
           }}
         >
           <Styles.ToggleItem value="Cartão de Crédito">
