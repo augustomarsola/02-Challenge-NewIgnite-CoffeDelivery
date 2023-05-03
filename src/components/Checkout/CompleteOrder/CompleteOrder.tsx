@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { SmallTitle } from '@/components/SmallTitle'
 import * as Styles from './CompleteOrder.styles'
 import { DefaultCard } from '@/components/DefaultCard'
-import * as ToggleGroup from '@radix-ui/react-toggle-group'
+import { Bank, CreditCard, Money } from 'phosphor-react'
 
 export default function CompleteOrder() {
-  const [value, setValue] = useState('left')
+  const [paymentMethod, setPaymentMethod] = useState('')
 
   return (
     <Styles.Wrapper>
@@ -48,21 +48,24 @@ export default function CompleteOrder() {
             </Styles.DeliveryDescription>
           </Styles.DeliveryText>
         </Styles.DeliveryWrapper>
-        <ToggleGroup.Root
+        <Styles.ToggleRoot
           type="single"
-          value={value}
+          value={paymentMethod}
           onValueChange={(value: string) => {
-            if (value) setValue(value)
+            if (value) setPaymentMethod(value)
           }}
         >
-          <ToggleGroup.Item value="Cartão de Crédito">
-            Cartão de Crédito
-          </ToggleGroup.Item>
-          <ToggleGroup.Item value="Cartão de Débito">
-            Cartão de Débito
-          </ToggleGroup.Item>
-          <ToggleGroup.Item value="Dinheiro">Dinheiro</ToggleGroup.Item>
-        </ToggleGroup.Root>
+          <Styles.ToggleItem value="Cartão de Crédito">
+            <CreditCard /> Cartão de Crédito
+          </Styles.ToggleItem>
+          <Styles.ToggleItem value="Cartão de Débito">
+            <Bank /> Cartão de Débito
+          </Styles.ToggleItem>
+          <Styles.ToggleItem value="Dinheiro">
+            <Money />
+            Dinheiro
+          </Styles.ToggleItem>
+        </Styles.ToggleRoot>
       </DefaultCard>
     </Styles.Wrapper>
   )

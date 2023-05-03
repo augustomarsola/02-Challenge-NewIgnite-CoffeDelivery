@@ -1,5 +1,6 @@
 import { styled } from '@/styles'
 import { MapPinLine, CurrencyDollar } from 'phosphor-react'
+import * as ToggleGroup from '@radix-ui/react-toggle-group'
 
 export const Wrapper = styled('div', {
   display: 'flex',
@@ -78,5 +79,42 @@ export const DeliveryFormInput = styled('input', {
   '&:focus': {
     outline: 'none',
     border: 'solid 1px $yellow900',
+  },
+})
+
+export const ToggleRoot = styled(ToggleGroup.Root, {
+  display: 'flex',
+  gap: '0.75rem',
+  marginTop: '2rem',
+})
+
+export const ToggleItem = styled(ToggleGroup.Item, {
+  alignItems: 'center',
+  backgroundColor: '$buttonColor',
+  border: 'solid 1px transparent',
+  borderRadius: 6,
+  color: '$textColor',
+  cursor: 'pointer',
+  display: 'flex',
+  fontSize: '0.75rem',
+  gap: '0.75rem',
+  justifyContent: 'center',
+  lineHeight: '100%',
+  padding: '1rem',
+  transition: '.3s',
+  textTransform: 'uppercase',
+
+  '& svg': {
+    color: '$purple500',
+    fontSize: '0.875rem',
+  },
+
+  '&:hover': {
+    backgroundColor: '$hoverColor',
+  },
+
+  '&[data-state=on]': {
+    backgroundColor: '$purple100',
+    border: 'solid 1px $purple500',
   },
 })
